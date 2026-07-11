@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajnish Kumar — Resume</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: Letter;
+    margin: 0.38in 0.46in 0.34in 0.46in;
+    /* suppress browser-generated date/title/URL headers and footers */
+    @top-center { content: none; }
+    @bottom-center { content: none; }
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.4pt;
+    line-height: 1.35;
+    color: #1a1a1a;
+    background: #fff;
+    width: 7.58in;
+    margin: 0.38in auto 0;
+    padding: 0;
+  }
+
+  /* ── HEADER ──────────────────────────────── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 100%);
+    border-bottom: 2.5px solid #1d3557;
+    border-radius: 6px 6px 0 0;
+    padding: 10px 14px 8px 14px;
+    margin-bottom: 8px;
+  }
+
+  .header-left h1 {
+    font-size: 19pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #1d3557;
+    line-height: 1;
+  }
+
+  .header-left .title {
+    font-size: 8.6pt;
+    font-weight: 500;
+    color: #457b9d;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 7.6pt;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .header-right a { color: #457b9d; text-decoration: none; }
+
+  .contact-item { display: inline-flex; align-items: center; gap: 3px; }
+  .contact-item i { font-size: 7.2pt; color: #457b9d; }
+
+  .job-date i { font-size: 7pt; color: #888; margin-right: 2px; }
+  a.inline { color: #457b9d; text-decoration: none; border-bottom: 1px dotted #a8c8e8; }
+  a.inline:hover { border-bottom-style: solid; }
+
+  /* ── SECTIONS ────────────────────────────── */
+  .section { margin-bottom: 5.5px; }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 7.4pt;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #1d3557;
+    border-bottom: 1px solid #a8c8e8;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+  }
+
+  .section-title i {
+    font-size: 8pt;
+    color: #457b9d;
+    flex-shrink: 0;
+  }
+
+  /* ── SUMMARY ─────────────────────────────── */
+  .summary p { font-size: 8.2pt; color: #222; line-height: 1.42; }
+
+  /* ── SKILLS ──────────────────────────────── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 16px;
+  }
+
+  .skill-row { font-size: 7.9pt; line-height: 1.42; }
+  .skill-row strong { font-weight: 600; color: #1d3557; }
+
+  /* ── EXPERIENCE ──────────────────────────── */
+  .job {
+    margin-bottom: 6px;
+    padding-left: 9px;
+    border-left: 3px solid #a8c8e8;
+  }
+
+  .job:hover { border-left-color: #1d3557; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5px;
+  }
+
+  .job-title { font-size: 8.8pt; font-weight: 700; color: #1a1a1a; }
+  .job-company { font-weight: 700; color: #1d3557; }
+  .job-date { font-size: 7.7pt; color: #555; white-space: nowrap; font-weight: 400; }
+
+  .job-sub {
+    font-size: 7.5pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  ul.bullets { list-style: none; padding: 0; margin: 0; }
+
+  ul.bullets li {
+    padding-left: 11px;
+    position: relative;
+    font-size: 8.1pt;
+    line-height: 1.38;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+
+  ul.bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #457b9d;
+    font-size: 6.8pt;
+    top: 1px;
+  }
+
+  /* ── EDUCATION ───────────────────────────── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px 16px;
+  }
+
+  .edu-entry .degree { font-size: 8.1pt; font-weight: 600; color: #1a1a1a; }
+  .edu-entry .school { font-size: 7.7pt; color: #444; }
+  .edu-entry .meta { font-size: 7.3pt; color: #666; }
+
+  /* ── ACHIEVEMENTS ────────────────────────── */
+  .achievements p { font-size: 7.9pt; color: #333; line-height: 1.45; }
+
+  /* ── PRINT ───────────────────────────────── */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @media print {
+    body { margin: 0; width: 100%; }
+    a { color: #457b9d !important; text-decoration: none !important; }
+    a[href]::after { content: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ───────────────────────────────────────────── -->
+<div class="header">
+  <div class="header-left">
+    <h1>Rajnish Kumar</h1>
+    <div class="title">Sr. Software Engineer</div>
+  </div>
+  <div class="header-right">
+    <span class="contact-item"><i class="fa-solid fa-envelope"></i> rajnishkumar448@gmail.com</span>
+    &nbsp;·&nbsp;
+    <span class="contact-item"><i class="fa-solid fa-phone"></i> +91 93904 99501</span><br>
+    <span class="contact-item"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/rajnish-kumar-594752a5">linkedin.com/in/rajnish-kumar-594752a5</a></span>
+    &nbsp;·&nbsp;
+    <span class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/rajnish-jais">github.com/rajnish-jais</a></span>
+  </div>
+</div>
+
+<!-- ── SUMMARY ──────────────────────────────────────────── -->
+<div class="section summary">
+  <div class="section-title"><i class="fa-solid fa-user"></i> Summary</div>
+  <p>Backend-focused Sr. Software Engineer with 7+ years building distributed systems in Go. At CloudBees, led the platform's first LLM-powered CI/CD agent (Claude Code + AWS Bedrock) and drove a hybrid cloud execution engine from prototype to enterprise deployment across a 55+ Go microservice platform. Deep expertise in distributed systems, PostgreSQL, Kafka/NATS, Kubernetes, Datadog APM, and open-source contribution to Tekton, OpenTelemetry, and Docker.</p>
+</div>
+
+<!-- ── SKILLS ───────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</div>
+  <div class="skills-grid">
+    <div class="skill-row"><strong>Languages:</strong> Go (primary), Python, C++, Ruby</div>
+    <div class="skill-row"><strong>Cloud / Infra:</strong> AWS (EKS, ECR, Secrets Manager), Kubernetes, Docker</div>
+    <div class="skill-row"><strong>Backend:</strong> gRPC/protobuf, REST APIs, NATS, Kafka, Redis</div>
+    <div class="skill-row"><strong>Observability:</strong> Datadog APM, Prometheus, Grafana</div>
+    <div class="skill-row"><strong>Databases:</strong> PostgreSQL, MySQL, Cassandra, Elasticsearch</div>
+    <div class="skill-row"><strong>AI / LLM:</strong> Claude Code, Anthropic API, AWS Bedrock, Agent Design</div>
+    <div class="skill-row"><strong>CI/CD:</strong> CloudBees Unify, GitLab CI, Tekton, Git</div>
+    <div class="skill-row"><strong>Frontend:</strong> React, TypeScript (working knowledge)</div>
+  </div>
+</div>
+
+<!-- ── EXPERIENCE ────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</div>
+
+  <!-- CloudBees -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.cloudbees.com">CloudBees</a></span> &mdash; Sr. Software Engineer</span>
+      <span class="job-date"><i class="fa-regular fa-calendar"></i> Mar 2025 – Present &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Remote</span>
+    </div>
+    <div class="job-sub">Platform Engineering · Workflows &amp; AI · 55+ Go microservices serving 500+ enterprise orgs · gRPC, Kubernetes, PostgreSQL, NATS, Tekton</div>
+    <ul class="bullets">
+      <li>Led design and delivery of CloudBees Unify's <strong>first LLM-powered CI/CD agent</strong> — automated feature-flag cleanup using Claude Code + LLM gateway (AWS Bedrock); built two-phase analyze/apply safety model with JSON Schema validation and a 15-scenario security threat model; authored org-wide <strong>AI Agent Development Playbook</strong> enabling future teams to ship agent skills independently</li>
+      <li>Drove <strong>hybrid cloud execution engine</strong> from prototype to enterprise adoption (Capital One, Westpac, IHG) — primary contributor across 4 services; designed containerized job executor (image pull, volume mounts, env injection, timeouts); coordinated delivery across US/India/France engineering teams, unblocking cross-repo dependencies and version promotions</li>
+      <li>Identified NATS <strong>race condition responsible for 81% of platform errors</strong> (941K/1.16M) via deep-dive SPIKE; authored design doc, presented to senior leadership, and shipped the fix — eliminating the platform's most common error class</li>
+      <li>Led production RCA with <strong>Datadog APM flame graphs</strong> tracing goroutine-pool saturation to a single 1,050-ID batch request (latency 1m 16s/req, 250+ cross-service failures); shipped batching limits, per-ID timeouts, and queue-depth alerting</li>
+      <li>Designed <strong>Cassandra → PostgreSQL migration</strong> for 15 tables across 2 core services; owned container image build action (50+ commits); led SCM checkout action migration to unified GitHub/GitLab/Bitbucket architecture serving 100+ consumers</li>
+    </ul>
+  </div>
+
+  <!-- Zoomcar -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zoomcar.com">Zoomcar</a></span> &mdash; Software Engineer</span>
+      <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2021 – Mar 2025 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
+    </div>
+    <div class="job-sub">IoT &amp; Host teams · Go, Python, Ruby, Java, Kafka, PostgreSQL, Redis</div>
+    <ul class="bullets">
+      <li>Took complete ownership of <strong>IoT Portal</strong> for international vehicle monitoring and remote control; improved API and component performance; delivered Trips, Offline-Tracking, Geofence, Device Settings features; provided on-call production support</li>
+      <li>Built end-to-end <strong>host onboarding flow</strong> for India and Egypt markets (Landing Page, RC Card Upload, Multi-language Support, car-market data automation); A/B experiments improved onboarding conversion <strong>from 3.5% to 8.5%</strong></li>
+      <li>Contributed to design decisions across the Host product driving <strong>~40% increase</strong> in the number of hosts creating listings</li>
+    </ul>
+  </div>
+
+  <!-- ZopSmart -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zopsmart.com">ZopSmart</a> (<a class="inline" href="https://www.kroger.com">Kroger</a>)</span> &mdash; Software Engineer</span>
+      <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2020 – Jun 2021 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
+    </div>
+    <ul class="bullets">
+      <li>Core developer of <a class="inline" href="https://github.com/gofr-dev/gofr"><strong>gofr</strong></a> Go microframework during its internal incubation at Kroger (multi-DB support, structured logging, test coverage); framework was subsequently open-sourced and adopted at scale — stack: Go, Postgres, Cassandra, Redis, Docker, Prometheus, Grafana</li>
+    </ul>
+  </div>
+
+  <!-- Bosch Internship -->
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title"><span class="job-company">IIT Tirupati &times; <a class="inline" href="https://www.bosch.com">Bosch</a></span> &mdash; Research Intern</span>
+      <span class="job-date"><i class="fa-regular fa-calendar"></i> May 2019 – Mar 2020 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Tirupati</span>
+    </div>
+    <ul class="bullets">
+      <li>Researched <strong>automated source code summarization</strong> — built LSTM-based Neural Machine Translation models to auto-generate natural language descriptions of Java methods and extract API usage patterns</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ── OPEN SOURCE ───────────────────────────────────────── -->
+<div class="section">
+  <div class="section-title"><i class="fa-brands fa-github"></i> Open Source Contributions</div>
+  <ul class="bullets">
+    <li><a class="inline" href="https://github.com/tektoncd/pipeline/pull/10140"><strong>tektoncd/pipeline</strong></a> (9k stars) — Merged: injected traceID &amp; spanID into structured log output, improving distributed trace correlation across pipeline runs</li>
+    <li><a class="inline" href="https://github.com/open-telemetry/opentelemetry-collector-contrib/pulls?q=is%3Apr+author%3Arajnish-jais"><strong>open-telemetry/opentelemetry-collector-contrib</strong></a> (26k stars) — Merged: added <code>universe_domain</code> Sovereign Cloud support across 4 Google Cloud components; renamed Splunk Enterprise receiver type with backward-compatible alias</li>
+    <li><a class="inline" href="https://github.com/moby/moby/pull/52758"><strong>moby/moby</strong></a> — Docker Engine (69k stars) — Merged: re-enabled networking integration test in docker-py suite</li>
+  </ul>
+</div>
+
+<!-- ── EDUCATION ─────────────────────────────────────────── -->
+<div class="section">
+  <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+  <div class="edu-grid">
+    <div class="edu-entry">
+      <div class="degree">M.Tech, Computer Science &amp; Engineering</div>
+      <div class="school">IIT Tirupati &nbsp;·&nbsp; <span style="color:#457b9d">CGPA 7.8 / 10</span></div>
+      <div class="meta">Jun 2018 – Jun 2020</div>
+    </div>
+    <div class="edu-entry">
+      <div class="degree">B.Tech, Computer Science &amp; Engineering</div>
+      <div class="school">Tezpur University &nbsp;·&nbsp; <span style="color:#457b9d">CGPA 7.74 / 10</span></div>
+      <div class="meta">Jun 2013 – Jun 2017</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ACHIEVEMENTS ──────────────────────────────────────── -->
+<div class="section">
+  <div class="section-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
+  <p>GATE-2018: <strong>97.90 percentile</strong> among 107,893 candidates &nbsp;·&nbsp; ACM Summer School 2019 selectee &nbsp;·&nbsp; JEE Mains 2013: <strong>95.96 percentile</strong> among 1.4M candidates</p>
+</div>
+
+</body>
+</html>
