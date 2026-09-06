@@ -1,337 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajnish Kumar — Resume</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajnish Kumar — Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  @page {
-    size: Letter;
-    margin: 0.38in 0.46in 0.34in 0.46in;
-    /* suppress browser-generated date/title/URL headers and footers */
-    @top-center { content: none; }
-    @bottom-center { content: none; }
-  }
-
-  body {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 8.4pt;
-    line-height: 1.35;
-    color: #1a1a1a;
-    background: #eef0f3;
-    padding: 26px 0;
-  }
-
-  /* white content card floating on the soft grey page */
-  .page {
-    width: 7.58in;
-    margin: 0 auto;
-    background: #fff;
-    padding: 0.3in 0.36in 0.34in;
-    border-radius: 9px;
-    box-shadow: 0 2px 14px rgba(20, 30, 45, 0.09);
-  }
-
-  /* ── HEADER ──────────────────────────────── */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #E0F7FA 0%, #80DEEA 100%);
-    border-bottom: 2.5px solid #1a1a1a;
-    border-radius: 6px 6px 0 0;
-    padding: 8px 14px 6px 14px;
-    margin-bottom: 7px;
-  }
-
-  .header-left h1 {
-    font-size: 19pt;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    color: #1a1a1a;
-    line-height: 1;
-  }
-
-  .header-left .title {
-    font-size: 8.6pt;
-    font-weight: 500;
-    color: #555;
-    margin-top: 2px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  .header-right {
-    text-align: right;
-    font-size: 7.6pt;
-    color: #444;
-    line-height: 1.55;
-  }
-
-  .header-right a { color: #555; text-decoration: none; }
-
-  .contact-item { display: inline-flex; align-items: center; gap: 3px; }
-  .contact-item i { font-size: 7.2pt; color: #555; }
-
-  .job-date i { font-size: 7pt; color: #888; margin-right: 2px; }
-  a.inline { color: #555; text-decoration: none; border-bottom: 1px dotted #999; }
-  a.inline:hover { border-bottom-style: solid; }
-
-  /* ── SECTIONS ────────────────────────────── */
-  .section { margin-bottom: 3px; }
-  .section, .job { page-break-inside: avoid; }
-
-  .section-title {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 7.4pt;
-    font-weight: 700;
-    letter-spacing: 1.1px;
-    text-transform: uppercase;
-    color: #1a1a1a;
-    background: #f4f5f7;
-    border-bottom: 1px solid #d8dce1;
-    border-radius: 3px;
-    padding: 2px 6px;
-    margin-bottom: 3px;
-  }
-
-  .section-title i {
-    font-size: 8pt;
-    color: #555;
-    flex-shrink: 0;
-  }
-
-  /* ── SUMMARY ─────────────────────────────── */
-  .summary p { font-size: 8.2pt; color: #222; line-height: 1.42; }
-
-  /* ── SKILLS ──────────────────────────────── */
-  .skills-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .skill-row { font-size: 7.9pt; line-height: 1.4; }
-  .skill-row strong { font-weight: 600; color: #1a1a1a; }
-
-  /* ── EXPERIENCE ──────────────────────────── */
-  .job {
-    margin-bottom: 4.5px;
-    padding-left: 9px;
-    border-left: 3px solid #ccc;
-  }
-
-  .job:hover { border-left-color: #1a1a1a; }
-
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5px;
-  }
-
-  .job-title { font-size: 8.8pt; font-weight: 700; color: #1a1a1a; }
-  .job-company { font-weight: 700; color: #1a1a1a; }
-  .job-date { font-size: 7.7pt; color: #555; white-space: nowrap; font-weight: 400; }
-
-  .job-sub {
-    font-size: 7.5pt;
-    color: #555;
-    font-style: italic;
-    margin-bottom: 2px;
-  }
-
-  ul.bullets { list-style: none; padding: 0; margin: 0; }
-
-  ul.bullets li {
-    padding-left: 11px;
-    position: relative;
-    font-size: 8.1pt;
-    line-height: 1.34;
-    margin-bottom: 2.5px;
-    color: #1a1a1a;
-  }
-
-  ul.bullets li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: #555;
-    font-size: 6.8pt;
-    top: 1px;
-  }
-
-  /* ── EDUCATION ───────────────────────────── */
-  .edu-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5px 16px;
-  }
-
-  .edu-entry .degree { font-size: 8.1pt; font-weight: 600; color: #1a1a1a; }
-  .edu-entry .school { font-size: 7.7pt; color: #444; }
-  .edu-entry .meta { font-size: 7.3pt; color: #666; }
-
-  /* ── ACHIEVEMENTS ────────────────────────── */
-  .achievements p { font-size: 7.9pt; color: #333; line-height: 1.45; }
-
-  /* ── PRINT ───────────────────────────────── */
-  * {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  @media print {
-    body { margin: 0; padding: 0; background: #fff; }
-    .page {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border-radius: 0;
-      box-shadow: none;
+    /* ── PALETTE: muted slate + soft teal ────── */
+    :root {
+      --ink:        #26333f;   /* primary text — soft charcoal, not pure black */
+      --ink-strong: #1c2a36;   /* headings */
+      --ink-muted:  #5b6b7a;   /* secondary text */
+      --ink-faint:  #7d8b98;   /* dates, meta */
+      --accent:     #3d6b7d;   /* desaturated teal-blue */
+      --accent-soft:#a8c3cc;   /* rules, bullet marks */
+      --tint:       #eef3f5;   /* section-title fill */
+      --tint-line:  #dbe4e8;   /* hairlines */
+      --page-bg:    #f1f3f5;
     }
-    a { color: #1a1a1a !important; text-decoration: none !important; }
-    a[href]::after { content: none !important; }
-  }
-</style>
+
+    @page {
+      size: Letter;
+      margin: 0.38in 0.46in 0.34in 0.46in;
+      /* suppress browser-generated date/title/URL headers and footers */
+      @top-center { content: none; }
+      @bottom-center { content: none; }
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 8.4pt;
+      line-height: 1.35;
+      color: var(--ink);
+      background: var(--page-bg);
+      padding: 26px 0;
+    }
+
+    /* white content card floating on the soft grey page */
+    .page {
+      width: 7.58in;
+      margin: 0 auto;
+      background: #fff;
+      padding: 0.3in 0.36in 0.34in;
+      border-radius: 9px;
+      box-shadow: 0 2px 14px rgba(38, 51, 63, 0.07);
+    }
+
+    /* ── HEADER ──────────────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #e9f0f2 0%, #dde8ec 100%);
+      border-bottom: 2px solid var(--accent);
+      border-radius: 6px 6px 0 0;
+      padding: 8px 14px 6px 14px;
+      margin-bottom: 7px;
+    }
+
+    .header-left h1 {
+      font-size: 19pt;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--ink-strong);
+      line-height: 1;
+    }
+
+    .header-left .title {
+      font-size: 8.6pt;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 7.6pt;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+
+    .header-right a { color: var(--accent); text-decoration: none; }
+
+    .contact-item { display: inline-flex; align-items: center; gap: 3px; }
+    .contact-item i { font-size: 7.2pt; color: var(--accent); }
+
+    .job-date i { font-size: 7pt; color: var(--ink-faint); margin-right: 2px; }
+    a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent-soft); }
+    a.inline:hover { border-bottom-style: solid; }
+
+    /* ── SECTIONS ────────────────────────────── */
+    .section { margin-bottom: 3px; }
+    .section, .job { page-break-inside: avoid; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.4pt;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--tint);
+      border-bottom: 1px solid var(--tint-line);
+      border-radius: 3px;
+      padding: 2px 6px;
+      margin-bottom: 3px;
+    }
+
+    .section-title i {
+      font-size: 8pt;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── SUMMARY ─────────────────────────────── */
+    .summary p { font-size: 8.2pt; color: var(--ink); line-height: 1.42; }
+
+    /* ── SKILLS ──────────────────────────────── */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .skill-row { font-size: 7.9pt; line-height: 1.4; }
+    .skill-row strong { font-weight: 600; color: var(--ink-strong); }
+
+    /* ── EXPERIENCE ──────────────────────────── */
+    .job {
+      margin-bottom: 4.5px;
+      padding-left: 9px;
+      border-left: 3px solid var(--accent-soft);
+    }
+
+    .job:hover { border-left-color: var(--accent); }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5px;
+    }
+
+    .job-title { font-size: 8.8pt; font-weight: 700; color: var(--ink-strong); }
+    .job-company { font-weight: 700; color: var(--ink-strong); }
+    .job-date { font-size: 7.7pt; color: var(--ink-faint); white-space: nowrap; font-weight: 400; }
+
+    .job-sub {
+      font-size: 7.5pt;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+
+    ul.bullets { list-style: none; padding: 0; margin: 0; }
+
+    ul.bullets li {
+      padding-left: 11px;
+      position: relative;
+      font-size: 8.1pt;
+      line-height: 1.34;
+      margin-bottom: 2.5px;
+      color: var(--ink);
+    }
+
+    ul.bullets li strong { color: var(--ink-strong); font-weight: 600; }
+
+    ul.bullets li code {
+      font-size: 7.6pt;
+      background: var(--tint);
+      color: var(--accent);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    ul.bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent-soft);
+      font-size: 6.8pt;
+      top: 1px;
+    }
+
+    /* ── EDUCATION ───────────────────────────── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px 16px;
+    }
+
+    .edu-entry .degree { font-size: 8.1pt; font-weight: 600; color: var(--ink-strong); }
+    .edu-entry .school { font-size: 7.7pt; color: var(--ink); }
+    .edu-entry .meta { font-size: 7.3pt; color: var(--ink-faint); }
+
+    /* ── ACHIEVEMENTS ────────────────────────── */
+    .achievements p { font-size: 7.9pt; color: var(--ink); line-height: 1.45; }
+
+    /* ── PRINT ───────────────────────────────── */
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      body { margin: 0; padding: 0; background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      a { color: var(--accent) !important; text-decoration: none !important; }
+      a[href]::after { content: none !important; }
+    }
+  </style>
 </head>
 <body>
 <div class="page">
 
-<!-- ── HEADER ───────────────────────────────────────────── -->
-<div class="header">
-  <div class="header-left">
-    <h1>Rajnish Kumar</h1>
-    <div class="title">Sr. Software Engineer</div>
-  </div>
-  <div class="header-right">
-    <span class="contact-item"><i class="fa-solid fa-envelope"></i> rajnishkumar448@gmail.com</span>
-    &nbsp;·&nbsp;
-    <span class="contact-item"><i class="fa-solid fa-phone"></i> +91 93904 99501</span><br>
-    <span class="contact-item"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/rajnish-kumar-594752a5">linkedin.com/in/rajnish-kumar-594752a5</a></span>
-    &nbsp;·&nbsp;
-    <span class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/rajnish-jais">github.com/rajnish-jais</a></span>
-    &nbsp;·&nbsp;
-    <span class="contact-item"><i class="fa-solid fa-globe"></i> <a href="https://rajnish-jais.github.io">rajnish-jais.github.io</a></span>
-  </div>
-</div>
-
-<!-- ── SUMMARY ──────────────────────────────────────────── -->
-<div class="section summary">
-  <div class="section-title"><i class="fa-solid fa-user"></i> Summary</div>
-  <p>Backend engineer with 7+ years building distributed systems in Go. I work on the hard parts — data consistency, performance, and services that stay up under load — with PostgreSQL, Kafka/NATS, and Kubernetes. I contribute to open source (Tekton, OpenTelemetry, Docker) and I'm known for lifting the team around me: mentoring juniors, unblocking peers, and getting things shipped across time zones.</p>
-</div>
-
-<!-- ── SKILLS ───────────────────────────────────────────── -->
-<div class="section">
-  <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</div>
-  <div class="skills-grid">
-    <div class="skill-row"><strong>Languages:</strong> Go (primary), C++, Python, Ruby</div>
-    <div class="skill-row"><strong>Data &amp; Messaging:</strong> PostgreSQL, MySQL, Redis, Kafka, NATS</div>
-    <div class="skill-row"><strong>Infra &amp; Tools:</strong> Kubernetes, Docker, gRPC/protobuf, Git, Claude Code</div>
-  </div>
-</div>
-
-<!-- ── EXPERIENCE ────────────────────────────────────────── -->
-<div class="section">
-  <div class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</div>
-
-  <!-- CloudBees -->
-  <div class="job">
-    <div class="job-header">
-      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.cloudbees.com">CloudBees</a></span> &mdash; Sr. Software Engineer</span>
-      <span class="job-date"><i class="fa-regular fa-calendar"></i> Mar 2025 – Present &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Remote</span>
+  <!-- ── HEADER ───────────────────────────────────────────── -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Rajnish Kumar</h1>
+      <div class="title">Sr. Software Engineer</div>
     </div>
+    <div class="header-right">
+      <span class="contact-item"><i class="fa-solid fa-envelope"></i> rajnishkumar448@gmail.com</span>
+      &nbsp;·&nbsp;
+      <span class="contact-item"><i class="fa-solid fa-phone"></i> +91 93904 99501</span><br>
+      <span class="contact-item"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/rajnish-kumar-594752a5">linkedin.com/in/rajnish-kumar-594752a5</a></span>
+      &nbsp;·&nbsp;
+      <span class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/rajnish-jais">github.com/rajnish-jais</a></span>
+      &nbsp;·&nbsp;
+      <span class="contact-item"><i class="fa-solid fa-globe"></i> <a href="https://rajnish-jais.github.io">rajnish-jais.github.io</a></span>
+    </div>
+  </div>
+
+  <!-- ── SUMMARY ──────────────────────────────────────────── -->
+  <div class="section summary">
+    <div class="section-title"><i class="fa-solid fa-user"></i> Summary</div>
+    <p>Backend engineer with 7+ years building distributed systems in Go. I work on the hard parts — data consistency, performance, and services that stay up under load — with PostgreSQL, Kafka/NATS, and Kubernetes. I'm known for lifting the team around me: mentoring juniors, unblocking peers, and getting things shipped across time zones.</p>
+  </div>
+
+  <!-- ── SKILLS ───────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</div>
+    <div class="skills-grid">
+      <div class="skill-row"><strong>Languages:</strong> Go (primary), C++, Python, Ruby</div>
+      <div class="skill-row"><strong>Data &amp; Messaging:</strong> PostgreSQL, MySQL, Redis, Kafka, NATS</div>
+      <div class="skill-row"><strong>Infra &amp; Tools:</strong> Kubernetes, Docker, gRPC/protobuf, Git, Claude Code</div>
+    </div>
+  </div>
+
+  <!-- ── EXPERIENCE ────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</div>
+
+    <!-- CloudBees -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company"><a class="inline" href="https://www.cloudbees.com">CloudBees</a></span> &mdash; Sr. Software Engineer</span>
+        <span class="job-date"><i class="fa-regular fa-calendar"></i> Mar 2025 – Present &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Remote</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Built and secured CloudBees Unify's first LLM-powered CI/CD agent</strong> — automated feature-flag cleanup with Claude Code using a two-phase analyze/apply safety model. Led the threat-model remediation: sandboxed the agent's filesystem.</li>
+        <li><strong>Led Edge Runner, a hybrid CI/CD execution engine</strong> that lets enterprise customers run workflows on their own infrastructure. Built the container executor — image pulls, volume mounts, env injection, timeouts — and delivered container-step support, DSL integration, and log streaming across 4 services.</li>
+        <li><strong>Owned the CRD producer path:</strong> a DSL-to-Tekton compiler emitting custom-task CRs and a dispatch service applying per-run cluster bundles with region failover.</li>
+        <li><strong>Contributed to the MVP of a Feature Management platform</strong>, delivering feature flag creation, targeting, and dependency-aware lifecycle management for a product-led growth initiative.</li>
+        <li><strong>Found and fixed a race condition behind 81% of platform errors.</strong> Ran the investigation, wrote the design doc, presented to senior leadership, and shipped the async-registration fix.</li>
+        <li><strong>Owned the platform's most-used CI/CD actions</strong> — the Kaniko build action and the checkout action's v1→v2 rewrite into one SCM-agnostic design across GitHub, GitLab, and Bitbucket, migrating 100+ consumers.</li>
+        <li><strong>Deep SCM integration across GitHub, GitLab, and Bitbucket</strong> — OIDC token generation for workflows, git credential helpers, GitLab subgroup clone URLs, and correct SCM event and git-ref handling end to end.</li>
+      </ul>
+    </div>
+
+    <!-- Zoomcar -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zoomcar.com">Zoomcar</a></span> &mdash; Software Engineer</span>
+        <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2021 – Mar 2025 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Set up and tuned Kafka clusters</strong> for high-throughput, low-latency telematics streams, then drove Kafka's adoption as core company infrastructure — training teams and integrating it into existing systems.</li>
+        <li><strong>Built Zoomcar's in-house IoT service in Go</strong> for real-time communication with in-car devices — capturing vehicle telemetry and issuing remote commands. Designed the server-device protocol with Protobuf.</li>
+        <li><strong>Built streaming pipelines with Kafka Connect and Kafka Streams</strong> that normalized data from many device types into one format for internal systems, plus an alerting service that flagged unsafe conditions and scored driving behavior.</li>
+        <li><strong>Raised car lock/unlock success from 83% to ~100%</strong> by debugging across the full stack — backend (Ruby/Rails), mobile (Java), and device firmware (C) — and fixing the device onboarding flow.</li>
+        <li><strong>Cut deployment time by 90%</strong> by rebuilding the pipeline with multi-stage Docker BuildKit builds.</li>
+      </ul>
+    </div>
+
+    <!-- ZopSmart -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zopsmart.com">ZopSmart</a> (<a class="inline" href="https://www.kroger.com">Kroger</a>)</span> &mdash; Software Engineer</span>
+        <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2020 – Jun 2021 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Core developer of <a class="inline" href="https://github.com/gofr-dev/gofr">gofr</a>, a Go microframework</strong> built during its incubation at Kroger — added multi-database support, structured logging, and test coverage. It was later open-sourced and is now a well-known OSS Go framework with 9k+ GitHub stars.</li>
+      </ul>
+    </div>
+
+    <!-- Bosch Internship -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title"><span class="job-company">IIT Tirupati &times; <a class="inline" href="https://www.bosch.com">Bosch</a></span> &mdash; Research Intern</span>
+        <span class="job-date"><i class="fa-regular fa-calendar"></i> May 2019 – Mar 2020 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Tirupati</span>
+      </div>
+      <ul class="bullets">
+        <li>Researched <strong>automated source-code summarization</strong> — built LSTM-based neural machine translation models that auto-generate natural-language descriptions of Java methods and extract API usage patterns.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ── OPEN SOURCE ───────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title"><i class="fa-brands fa-github"></i> Open Source Contributions</div>
     <ul class="bullets">
-      <li><strong>Built and secured CloudBees Unify's first LLM-powered CI/CD agent</strong> — automated feature-flag cleanup with Claude Code using a two-phase analyze/apply safety model. Led the threat-model remediation: sandboxed the agent's filesystem, closed prompt-injection paths, and moved secrets to runtime fetch so credentials never touch workflow inputs or logs.</li>
-      <li><strong>Led Edge Runner, a hybrid CI/CD execution engine</strong> that lets enterprise customers run workflows on their own infrastructure. Built the container executor — image pulls, volume mounts, env injection, timeouts — and delivered container-step support, DSL integration, and log streaming across 4 services.</li>
-      <li><strong>Owned the CRD producer path:</strong> a DSL-to-Tekton compiler emitting custom-task CRs and a dispatch service applying per-run cluster bundles with region failover.</li>
-      <li><strong>Contributed to the MVP of a Feature Management platform</strong>, delivering feature flag creation, targeting, and dependency-aware lifecycle management for a product-led growth initiative.</li>
-      <li><strong>Found and fixed a race condition behind 81% of platform errors.</strong> Ran the investigation, wrote the design doc, presented to senior leadership, and shipped the async-registration fix.</li>
-      <li><strong>Owned the platform's most-used CI/CD actions</strong> — the Kaniko build action and the checkout action's v1→v2 rewrite into one SCM-agnostic design across GitHub, GitLab, and Bitbucket, migrating 100+ consumers.</li>
-      <li><strong>Deep SCM integration across GitHub, GitLab, and Bitbucket</strong> — OIDC token generation for workflows, git credential helpers, GitLab subgroup clone URLs, and correct SCM event and git-ref handling end to end.</li>
+      <li><a class="inline" href="https://github.com/tektoncd/pipeline/pull/10140"><strong>tektoncd/pipeline</strong></a> (9k) — injected traceID &amp; spanID into structured logs for distributed-trace correlation across pipeline runs.</li>
+      <li><a class="inline" href="https://github.com/open-telemetry/opentelemetry-collector-contrib/pulls?q=is%3Apr+author%3Arajnish-jais"><strong>open-telemetry/opentelemetry-collector-contrib</strong></a> (26k) — added <code>universe_domain</code> Sovereign Cloud support across 4 Google Cloud components; renamed the Splunk Enterprise receiver with a backward-compatible alias.</li>
+      <li><a class="inline" href="https://github.com/volcano-sh/kthena/pull/1151"><strong>volcano-sh/kthena</strong></a> (CNCF) — made the router's pod-metrics scrape interval configurable, with context-aware graceful shutdown.</li>
+      <li><a class="inline" href="https://github.com/moby/moby/pull/52758"><strong>moby/moby</strong></a> — Docker Engine (69k) — re-enabled the networking integration test in the docker-py suite.</li>
     </ul>
   </div>
 
-  <!-- Zoomcar -->
-  <div class="job">
-    <div class="job-header">
-      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zoomcar.com">Zoomcar</a></span> &mdash; Software Engineer</span>
-      <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2021 – Mar 2025 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
-    </div>
-    <ul class="bullets">
-      <li><strong>Set up and tuned Kafka clusters</strong> for high-throughput, low-latency telematics streams, then drove Kafka's adoption as core company infrastructure — training teams and integrating it into existing systems.</li>
-      <li><strong>Built Zoomcar's in-house IoT service in Go</strong> for real-time communication with in-car devices — capturing vehicle telemetry and issuing remote commands. Designed the server-device protocol with Protobuf.</li>
-      <li><strong>Built streaming pipelines with Kafka Connect and Kafka Streams</strong> that normalized data from many device types into one format for internal systems, plus an alerting service that flagged unsafe conditions and scored driving behavior.</li>
-      <li><strong>Raised car lock/unlock success from 83% to ~100%</strong> by debugging across the full stack — backend (Ruby/Rails), mobile (Java), and device firmware (C) — and fixing the device onboarding flow.</li>
-      <li><strong>Cut deployment time by 90%</strong> by rebuilding the pipeline with multi-stage Docker BuildKit builds.</li>
-    </ul>
-  </div>
-
-  <!-- ZopSmart -->
-  <div class="job">
-    <div class="job-header">
-      <span class="job-title"><span class="job-company"><a class="inline" href="https://www.zopsmart.com">ZopSmart</a> (<a class="inline" href="https://www.kroger.com">Kroger</a>)</span> &mdash; Software Engineer</span>
-      <span class="job-date"><i class="fa-regular fa-calendar"></i> Jul 2020 – Jun 2021 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore/Remote</span>
-    </div>
-    <ul class="bullets">
-      <li><strong>Core developer of <a class="inline" href="https://github.com/gofr-dev/gofr">gofr</a>, a Go microframework</strong> built during its incubation at Kroger — added multi-database support, structured logging, and test coverage. It was later open-sourced and is now a well-known OSS Go framework with 9k+ GitHub stars. Stack: Go, Postgres, Cassandra, Redis, Docker, Prometheus, Grafana.</li>
-    </ul>
-  </div>
-
-  <!-- Bosch Internship -->
-  <div class="job">
-    <div class="job-header">
-      <span class="job-title"><span class="job-company">IIT Tirupati &times; <a class="inline" href="https://www.bosch.com">Bosch</a></span> &mdash; Research Intern</span>
-      <span class="job-date"><i class="fa-regular fa-calendar"></i> May 2019 – Mar 2020 &nbsp;·&nbsp; <i class="fa-solid fa-location-dot"></i> Tirupati</span>
-    </div>
-    <ul class="bullets">
-      <li>Researched <strong>automated source-code summarization</strong> — built LSTM-based neural machine translation models that auto-generate natural-language descriptions of Java methods and extract API usage patterns.</li>
-    </ul>
-  </div>
-
-</div>
-
-<!-- ── OPEN SOURCE ───────────────────────────────────────── -->
-<div class="section">
-  <div class="section-title"><i class="fa-brands fa-github"></i> Open Source Contributions</div>
-  <ul class="bullets">
-    <li><a class="inline" href="https://github.com/tektoncd/pipeline/pull/10140"><strong>tektoncd/pipeline</strong></a> (9k) — injected traceID &amp; spanID into structured logs for distributed-trace correlation across pipeline runs.</li>
-    <li><a class="inline" href="https://github.com/open-telemetry/opentelemetry-collector-contrib/pulls?q=is%3Apr+author%3Arajnish-jais"><strong>open-telemetry/opentelemetry-collector-contrib</strong></a> (26k) — added <code>universe_domain</code> Sovereign Cloud support across 4 Google Cloud components; renamed the Splunk Enterprise receiver with a backward-compatible alias.</li>
-    <li><a class="inline" href="https://github.com/volcano-sh/kthena/pull/1151"><strong>volcano-sh/kthena</strong></a> (CNCF) — made the router's pod-metrics scrape interval configurable, with context-aware graceful shutdown.</li>
-    <li><a class="inline" href="https://github.com/moby/moby/pull/52758"><strong>moby/moby</strong></a> — Docker Engine (69k) — re-enabled the networking integration test in the docker-py suite.</li>
-  </ul>
-</div>
-
-<!-- ── EDUCATION ─────────────────────────────────────────── -->
-<div class="section">
-  <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
-  <div class="edu-grid">
-    <div class="edu-entry">
-      <div class="degree">M.Tech, Computer Science &amp; Engineering</div>
-      <div class="school">IIT Tirupati &nbsp;·&nbsp; <span style="color:#555">CGPA 7.8 / 10</span></div>
-      <div class="meta">Jun 2018 – Jun 2020</div>
-    </div>
-    <div class="edu-entry">
-      <div class="degree">B.Tech, Computer Science &amp; Engineering</div>
-      <div class="school">Tezpur University &nbsp;·&nbsp; <span style="color:#555">CGPA 7.74 / 10</span></div>
-      <div class="meta">Jun 2013 – Jun 2017</div>
+  <!-- ── EDUCATION ─────────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+    <div class="edu-grid">
+      <div class="edu-entry">
+        <div class="degree">M.Tech, Computer Science &amp; Engineering</div>
+        <div class="school">IIT Tirupati &nbsp;·&nbsp; <span style="color:var(--ink-faint)">CGPA 7.8 / 10</span></div>
+        <div class="meta">Jun 2018 – Jun 2020</div>
+      </div>
+      <div class="edu-entry">
+        <div class="degree">B.Tech, Computer Science &amp; Engineering</div>
+        <div class="school">Tezpur University &nbsp;·&nbsp; <span style="color:var(--ink-faint)">CGPA 7.74 / 10</span></div>
+        <div class="meta">Jun 2013 – Jun 2017</div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ── ACHIEVEMENTS ──────────────────────────────────────── -->
-<div class="section achievements">
-  <div class="section-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
-  <p>Multiple <strong>4-star performance ratings</strong> at Zoomcar &nbsp;·&nbsp; Selected for <strong>ACM Summer School 2019</strong> &nbsp;·&nbsp; GATE-2018: <strong>97.90 percentile</strong> among 107,893 candidates &nbsp;·&nbsp; JEE Mains 2013: <strong>95.96 percentile</strong> among 1.4M candidates</p>
-</div>
+  <!-- ── ACHIEVEMENTS ──────────────────────────────────────── -->
+  <div class="section achievements">
+    <div class="section-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
+    <p>Multiple <strong>4-star performance ratings</strong> at Zoomcar &nbsp;·&nbsp; Selected for <strong>ACM Summer School 2019</strong> &nbsp;·&nbsp; GATE-2018: <strong>97.90 percentile</strong> among 107,893 candidates &nbsp;·&nbsp; JEE Mains 2013: <strong>95.96 percentile</strong> among 1.4M candidates</p>
+  </div>
 
 </div><!-- /.page -->
 </body>
